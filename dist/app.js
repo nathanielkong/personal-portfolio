@@ -7,9 +7,38 @@ const projects={
  chainguard:{title:'ChainGuard',kind:'AI & BLOCKCHAIN / FINAL-YEAR TEAM PROJECT',image:'chainguard.jpg',summary:'An AI investigation assistant that helps users ask blockchain questions and understand the evidence behind an Ethereum address.',details:['Implemented chat and CLI workflows with OpenAI, Gemini, and Claude provider options.','Normalised contract, transaction, token, and liquidity evidence into validated structures with source provenance.','Integrated an external detector through a typed HTTP API, with frontend, backend, and detector services separated in Docker Compose. Missing evidence remains explicit; findings are not guarantees of safety.'],tech:'React · Python · FastAPI · Pydantic · LiteLLM · Blockchain APIs · Docker Compose',links:[['View on GitHub','https://github.com/print-livelongflame/ChainGuard']],caption:'Actual frame from the project’s recorded interface demo.'}
 };
 const reducedMotion=window.matchMedia('(prefers-reduced-motion: reduce)');
-if('IntersectionObserver' in window){
- const observer=new IntersectionObserver(entries=>{for(const e of entries)if(e.isIntersecting){e.target.classList.add('visible');observer.unobserve(e.target)}},{threshold:.07});
- document.documentElement.classList.add('motion-ready');document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));
+const revealTweens=new Map();
+function refreshMotion(){window.ScrollTrigger?.refresh()}
+function revealFilteredProjects(){
+ if(!window.gsap||reducedMotion.matches)return;
+ const cards=[...document.querySelectorAll('.project')];
+ cards.forEach(card=>{const tween=revealTweens.get(card);tween?.scrollTrigger?.kill();tween?.kill();revealTweens.delete(card);window.gsap.killTweensOf(card);card.dataset.motionRevealed='true'});
+ window.gsap.set(cards,{clearProps:'opacity,visibility,transform'});
+ window.gsap.fromTo(cards.filter(card=>!card.hidden),{autoAlpha:0,y:18},{autoAlpha:1,y:0,duration:.5,stagger:.055,ease:'power2.out',clearProps:'opacity,visibility,transform'});
+}
+if(window.gsap&&window.ScrollTrigger){
+ const {gsap,ScrollTrigger}=window;
+ gsap.registerPlugin(ScrollTrigger);
+ const media=gsap.matchMedia();
+ media.add('(prefers-reduced-motion: no-preference)',()=>{
+  gsap.from('.hero-copy>h1,.hero-copy>p,.hero-copy>.button',{y:22,autoAlpha:0,stagger:.1,duration:.8,ease:'power3.out',clearProps:'opacity,visibility,transform'});
+  document.querySelectorAll('.reveal').forEach((el,index)=>{
+   if(el.dataset.motionRevealed==='true')return;
+   const tween=gsap.from(el,{y:el.classList.contains('project')?32:24,autoAlpha:0,duration:.8,delay:el.classList.contains('project')?(index%2)*.07:0,ease:'power3.out',clearProps:'opacity,visibility,transform',scrollTrigger:{trigger:el,start:'top 91%',once:true},onComplete:()=>{el.dataset.motionRevealed='true'}});
+   revealTweens.set(el,tween);
+  });
+  gsap.from('.skill-groups>div',{y:16,autoAlpha:0,stagger:.1,duration:.65,ease:'power2.out',clearProps:'opacity,visibility,transform',scrollTrigger:{trigger:'.skills',start:'top 82%',once:true}});
+  gsap.fromTo('.about-intro h2>span',{color:'#8e9d7d'},{color:'#d5ef91',ease:'none',scrollTrigger:{trigger:'.about-intro',start:'top 90%',end:'top 40%',scrub:.7}});
+  const underline=document.querySelector('.contact-title svg path');
+  if(underline){const length=underline.getTotalLength();gsap.fromTo(underline,{strokeDasharray:length,strokeDashoffset:length},{strokeDashoffset:0,ease:'none',scrollTrigger:{trigger:'.contact-title',start:'top 88%',end:'top 48%',scrub:.6}})}
+  return()=>revealTweens.clear();
+ });
+ media.add('(min-width: 761px) and (prefers-reduced-motion: no-preference)',()=>{
+  gsap.to('.hero-art',{y:-42,ease:'none',scrollTrigger:{trigger:'.hero',start:'top top',end:'bottom top',scrub:1}});
+ });
+ document.fonts?.ready.then(refreshMotion);
+ addEventListener('load',refreshMotion,{once:true});
+ document.querySelectorAll('.project-window img').forEach(img=>{if(!img.complete)img.addEventListener('load',refreshMotion,{once:true})});
 }
 let scrollQueued=false;
 function updateScroll(){const max=document.documentElement.scrollHeight-innerHeight;document.querySelector('.scroll-progress').style.width=(max>0?scrollY/max*100:0)+'%';scrollQueued=false}
@@ -17,7 +46,7 @@ addEventListener('scroll',()=>{if(!scrollQueued){scrollQueued=true;requestAnimat
 document.querySelectorAll('[data-filter]').forEach(button=>button.addEventListener('click',()=>{
  document.querySelectorAll('[data-filter]').forEach(b=>{b.classList.toggle('active',b===button);b.setAttribute('aria-pressed',String(b===button))});let count=0;
  document.querySelectorAll('.project').forEach(card=>{const show=button.dataset.filter==='all'||card.dataset.category.split(' ').includes(button.dataset.filter);card.hidden=!show;if(show){card.classList.add('visible');count++}});
- document.getElementById('filter-status').textContent=`Showing ${count} projects`;updateScroll();
+ document.getElementById('filter-status').textContent=`Showing ${count} projects`;revealFilteredProjects();refreshMotion();updateScroll();
 }));
 const dialog=document.querySelector('.project-dialog');let lastTrigger;
 document.querySelectorAll('[data-project]').forEach(button=>button.addEventListener('click',()=>{

@@ -14,6 +14,12 @@ python3 -m http.server 4173 --directory dist
 - `dist/assets/`: actual application captures, résumé, and the generated racing concept video.
 - `.openai/hosting.json`: the registered Sites identity and static hosting directory.
 
+The page flows from Home to About (including skills and certification), Projects, and Contact. The home hero is retained, and its scroll cue leads into About.
+
+GSAP 3.15.0 and ScrollTrigger 3.15.0 provide section entrances, staggered project reveals, a subtle desktop hero parallax, and a drawn contact underline. These are the same animation tools used in MatchLens. Their unmodified browser distributions and attribution are in `dist/assets/vendor/`; no package installation is required. Motion follows native scrolling and turns off with the visitor's reduced-motion preference. Filter changes refresh the scroll positions and reveal newly visible cards.
+
+Project previews use aligned frames with separate header/footer labels and no perspective or rotation. Fresh 1440 × 810 screenshots show MatchLens with the sample replay at 04:05, Analyq, and The House of Vows. EventHub retains an original illustration in an aligned layout.
+
 The site supports keyboard navigation, modal focus handling, reduced motion, native video controls, and a JavaScript-free readable page. Email opens the visitor's email client; there is no contact-form backend.
 
 ## Content and provenance
