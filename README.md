@@ -42,4 +42,6 @@ No unrelated profile details, contact data, or credentials are embedded. The dow
 
 ## Publishing
 
+For Netlify, connect the GitHub repository and deploy `main`. The root `netlify.toml` publishes `dist/`, which contains `index.html`, and skips the build command. No environment variables or dependency installation are needed for this static portfolio.
+
 The Sites helper packages the `dist` static directory alongside `.openai/hosting.json`. New hosting is private by default. The source has no connection to the GitHub project repositories; their links are for visitors to explore the work.
