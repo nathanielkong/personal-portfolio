@@ -2,6 +2,14 @@
 
 ## Name badge portrait
 
+Current asset: `/Users/nathanielkong/personal portfolio/nathaniel-portfolio/dist/assets/nathaniel-portrait-cutout.png`. Built-in ImageGen edited the prior white-background portrait into a transparent colour cutout. The image now sits directly on the card's shared cream surface (`#f5f4ec`), without a photo border. Prior assets remain available.
+
+Current final prompt:
+
+> Use case: background-extraction. Edit target: supplied square colour portrait. Remove ONLY the white background to actual transparency with a precise natural cutout at the hair and shoulder edges. Preserve Nathaniel's existing face, glasses, hair, skin colour, black polo shirt, pose, all photographic details and current square crop exactly as supplied. Do not repaint, beautify, relight, recolour, resize the person or change the composition. Keep original full-colour subject. Transparent background, no checkerboard drawn, no white border or halo, no new objects or text. This will sit directly on a cream portfolio card.
+
+Previous white-background version:
+
 - Mode: built-in ImageGen, image editing.
 - Input: Nathaniel's supplied café photograph, retained as `dist/assets/nathaniel-portrait.jpg`.
 - Saved asset: `/Users/nathanielkong/personal portfolio/nathaniel-portfolio/dist/assets/nathaniel-portrait-white.png`.
