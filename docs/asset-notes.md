@@ -1,5 +1,16 @@
 # Portfolio preview assets
 
+## Name badge portrait
+
+- Mode: built-in ImageGen, image editing.
+- Input: Nathaniel's supplied café photograph, retained as `dist/assets/nathaniel-portrait.jpg`.
+- Saved asset: `/Users/nathanielkong/personal portfolio/nathaniel-portfolio/dist/assets/nathaniel-portrait-white.png`.
+- Scope: colour portrait with the café replaced by white, used on the interactive badge.
+
+Final prompt:
+
+> Use case: identity-preserve / precise-object-edit. Edit target: the supplied colour photograph of Nathaniel sitting at a café. Create a portrait photo asset for his website name badge. Replace the entire café background, other people, chairs and table with a solid pure white (#ffffff) background. Keep Nathaniel himself unchanged: exact same face, glasses, hair, natural skin colour, expression, black polo shirt, body proportions and pose. Preserve photographic texture and original colours. No beautifying, no stylisation, no new clothing, no new facial features, no text. Frame as a clean centred head-and-shoulders/upper-torso portrait in a near-square composition, with a small white margin above hair and shoulders visible. Ensure a neat natural hair/shoulder silhouette against white. Output one edited portrait.
+
 ## ChainGuard homepage
 
 - Mode: built-in ImageGen, image editing.

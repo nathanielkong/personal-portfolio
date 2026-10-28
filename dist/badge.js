@@ -1,4 +1,4 @@
-/* A small, dependency-free rope simulation. The supplied photograph stays untouched. */
+/* A small, dependency-free rope simulation. The lanyard stays attached during dragging and swinging. */
 (()=>{
  const stage=document.querySelector('.badge-stage');if(!stage)return;
  const badge=stage.querySelector('.hanging-badge');
@@ -22,11 +22,12 @@
  }
  function resize(){
   const nextWidth=stage.clientWidth,nextHeight=stage.clientHeight;if(!nextWidth||!nextHeight)return;
-  if(Math.abs(nextWidth-width)<.5&&Math.abs(nextHeight-height)<.5)return;
+  const nextAnchorY=matchMedia('(min-width: 761px)').matches?-(stage.getBoundingClientRect().top+window.scrollY)-12:0;
+  if(Math.abs(nextWidth-width)<.5&&Math.abs(nextHeight-height)<.5&&Math.abs(nextAnchorY-anchor.y)<.5)return;
   width=nextWidth;height=nextHeight;cardWidth=clamp(width*.43,194,238);cardHeight=cardWidth*1.37;
   stage.style.setProperty('--badge-width',cardWidth+'px');stage.style.setProperty('--badge-height',cardHeight+'px');
   badge.style.left='0px';badge.style.top='0px';
-  anchor={x:width*.53,y:9};length=clamp(height-cardHeight-80,95,155);
+  anchor={x:width*.53,y:nextAnchorY};length=Math.max(120,height-cardHeight-65)-anchor.y;
   rope.setAttribute('viewBox',`0 0 ${width} ${height}`);anchorDot.setAttribute('cx',anchor.x);anchorDot.setAttribute('cy',anchor.y);
   reset(true);
  }
@@ -127,6 +128,8 @@
  preference.addEventListener('change',()=>reset(!preference.matches));
  document.addEventListener('visibilitychange',()=>{if(document.hidden)stop();else wake()});
  if('IntersectionObserver'in window)new IntersectionObserver(entries=>{visible=entries[0].isIntersecting;if(visible)wake();else stop()},{rootMargin:'100px'}).observe(stage);
- if('ResizeObserver'in window)new ResizeObserver(resize).observe(stage);else addEventListener('resize',resize);
+ if('ResizeObserver'in window)new ResizeObserver(resize).observe(stage);
+ addEventListener('resize',resize);
+ document.fonts?.ready.then(resize);
  resize();
 })();
