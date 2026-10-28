@@ -35,3 +35,7 @@
 @media(max-width:760px){.hero-actions{margin-top:25px;width:244px}.hero-copy .hero-actions .button{height:56px}.about .cert-section{margin-top:36px;padding-top:30px;gap:17px}.about .cert-section h3{font-size:20px}.about .cert-symbol{font-size:44px}.about .cert-section .eyebrow{font-size:9px}.about .cert-badge{margin-left:61px}.about .cert-section p:last-child{font-size:12px}}
 @media(max-width:600px){.skill-groups{grid-template-columns:1fr;gap:27px}.skill-groups h4{font-size:16px}.skill-groups p{font-size:15px;line-height:1.8}}
 .dialog-media{max-height:none}.dialog-media img,.dialog-media.artwork-media img{width:100%;height:auto;max-height:440px;aspect-ratio:auto;object-fit:contain;object-position:center}
+
+.heart-word svg path{stroke-dasharray:1;stroke-dashoffset:0;animation:hero-underline-draw 5s ease-in-out infinite both}.heart-word svg path+path{animation-delay:.15s}
+@keyframes hero-underline-draw{0%{stroke-dashoffset:1;opacity:0}2%{opacity:1}22%,94%{stroke-dashoffset:0;opacity:1}100%{stroke-dashoffset:0;opacity:0}}
+@media(prefers-reduced-motion:reduce){.heart-word svg path{animation:none;stroke-dashoffset:0;opacity:1}}
