@@ -11,16 +11,16 @@ python3 -m http.server 4173 --directory dist
 - `dist/index.html`: the page and visible project cards.
 - `dist/style.css`: responsive layout, colour, and motion.
 - `dist/app.js`: project detail content, filters, modal behaviour, copy email, and scroll reveals.
-- `dist/assets/`: actual application captures, résumé, and the generated racing concept video.
+- `dist/assets/`: application captures, résumé, and original illustrated project previews.
 - `.openai/hosting.json`: the registered Sites identity and static hosting directory.
 
-The page flows from Home to About (including skills and certification), Projects, and Contact. The home hero is retained. The green ticker has 56px of space below it on desktop and 32px on mobile; the former scroll cue is removed.
+The page flows from Home to About (including skills and certification), Projects, and Contact. The home hero has equal-sized stacked work and résumé buttons and a plain introduction. The duplicated study line is removed. Certification is inside About, under a larger toolbox. The green ticker has 56px of space below it on desktop and 32px on mobile; its two identical groups are sized to cover the viewport and loop continuously, with no scroll crop effect.
 
-GSAP 3.15.0 and ScrollTrigger 3.15.0 provide masked heading lines, reading reveals, layered desktop parallax, staggered hobby/skill/tag entrances, project preview crop reveals, a widening ticker with rotating accents, a drawn skill divider, a rotating certification symbol, and a contact underline and background flourish. Project frames stay level. These are the same animation tools used in MatchLens. Their unmodified browser distributions and attribution are in `dist/assets/vendor/`; no package installation is required. Motion follows native scrolling and turns off with the visitor's reduced-motion preference. Filter changes cancel pending project timelines, clear their intermediate styles, refresh scroll positions, and reveal newly visible cards. The navigation highlights the section currently in view, including when motion is disabled.
+GSAP 3.15.0 and ScrollTrigger 3.15.0 provide masked heading lines, reading reveals, layered desktop parallax, staggered hobby/skill/tag entrances, project preview crop reveals, a seamless repeating ticker with rotating accents, a drawn skill divider, a rotating certification symbol, and a contact underline and background flourish. Project frames stay level. These are the same animation tools used in MatchLens. Their unmodified browser distributions and attribution are in `dist/assets/vendor/`; no package installation is required. Motion follows native scrolling and turns off with the visitor's reduced-motion preference. Filter changes cancel pending project timelines, clear their intermediate styles, refresh scroll positions, and reveal newly visible cards. The navigation highlights the section currently in view, including when motion is disabled.
 
-Project previews use aligned frames with separate header/footer labels and no perspective or rotation. Fresh screenshots show the MatchLens homepage, Analyq, and The House of Vows. MatchLens details include both its homepage and the sample replay at 04:05. ChainGuard uses the homepage image supplied by Nathaniel, with its recorded investigation screenshot available in the project details; the original homepage image is also available at full size. EventHub retains an original illustration in an aligned layout.
+Project previews use aligned frames with separate header/footer labels and no perspective or rotation. Fresh screenshots show the MatchLens homepage, Analyq, and The House of Vows. MatchLens details include both its homepage and the sample replay at 04:05. ChainGuard uses the latest wide homepage screenshot supplied by Nathaniel, edited with built-in ImageGen to remove its yellow session warning. Its recorded investigation screenshot remains available in the project details. See `docs/asset-notes.md` for the edit prompt and provenance. EventHub retains an original illustration in an aligned layout.
 
-The site supports keyboard navigation, modal focus handling, reduced motion, native video controls, and a JavaScript-free readable page. Email opens the visitor's email client; there is no contact-form backend.
+The site supports keyboard navigation, modal focus handling, reduced motion, a JavaScript-free readable page, and SVG animations that respect reduced motion. Email opens the visitor's email client; there is no contact-form backend.
 
 ## Content and provenance
 
@@ -32,11 +32,11 @@ Projects and verified links:
 
 - MatchLens: https://github.com/nathanielkong/MatchLens. Screenshot from its local sample preview. Synthetic football data is explicitly disclosed in project details.
 - Analyq: https://github.com/nathanielkong/Analyq and https://analyq.vercel.app. Screenshot from the deployed frontend.
-- Obstacle Overdrive: https://github.com/mkbirb/obstacleoverdrive. Source structure and C# scripts checked. Its eight-second video is an original, programmatically generated concept animation, explicitly labelled as not gameplay footage. It does not show the exact game or headset behaviour.
+- Obstacle Overdrive: https://github.com/mkbirb/obstacleoverdrive. Source structure and C# scripts checked. The card and project details now use an original SVG racing illustration; the labelled clip is no longer shown.
 - The House of Vows: https://thehouseofvows.netlify.app and https://github.com/nat-0401/house-of-vow-website. Screenshot from the deployed site; role from the résumé.
 - EventHub: https://github.com/cosc2299-2025/team-project-group-p07-04, supplied by Nathaniel. The additional public portfolio repository at https://github.com/nat-0401/eventhub-fullstack-platform describes the event/RSVP features. Its visual is original editorial artwork rather than an application screenshot. Team work is credited as such.
 - ChainGuard: https://github.com/print-livelongflame/ChainGuard, supplied by Nathaniel and confirmed against the existing local checkout. Image is a frame of its recorded interface demonstration; contribution is based on the résumé.
-- Staff Detection & Tracking: https://github.com/nathanielkong/Footfallcam-staff-detection. Description and technologies from its public repository.
+- Staff Detection & Tracking: https://github.com/nathanielkong/Footfallcam-staff-detection. Description and technologies from its public repository. It has a full project card with an original cartoon SVG/CSS tracking animation and project details.
 
 No unrelated profile details, contact data, or credentials are embedded. The downloadable résumé is the supplied PDF.
 

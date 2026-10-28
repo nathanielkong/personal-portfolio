@@ -1,19 +1,33 @@
 const projects={
  matchlens:{title:'MatchLens',kind:'AI & FOOTBALL / HACKATHON PROJECT',image:'matchlens-home.jpg',summary:'An explainable football analysis platform built for the Microsoft Inside the Game Developer Hackathon.',details:['Interactive pitch replay, match statistics, and probability charts make match events easier to explore.','Evidence-backed summaries, conversational Q&A, and presenter recaps use Microsoft Foundry.','Built and evaluated using synthetic matches, with separate training, validation, and evaluation splits. Results do not establish performance on real football.'],tech:'React · TypeScript · Node.js · Express · PostgreSQL · Microsoft Foundry · Azure · Docker',links:[['View on GitHub','https://github.com/nathanielkong/MatchLens']],caption:'Actual MatchLens homepage captured from the local project.'},
  analyq:{title:'Analyq',kind:'FULL-STACK AI / INDEPENDENT PROJECT',image:'analyq.jpg',summary:'A stock research platform that turns natural-language questions into charts, comparisons, and explanations grounded in market data.',details:['Built the React and TypeScript frontend, Python/FastAPI API, and PostgreSQL storage.','Integrated market and news APIs with AI summaries, persistent conversations, and shared research caching.','Developed logistic regression models with gap-aware walk-forward validation and baseline comparisons; shipped automated backend tests and a Docker-based CI/CD pipeline.'],tech:'React · TypeScript · Python · FastAPI · PostgreSQL · scikit-learn · Docker · GitHub Actions',links:[['Visit live site','https://analyq.vercel.app'],['View on GitHub','https://github.com/nathanielkong/Analyq']],caption:'Actual screenshot from the deployed application.'},
- racing:{title:'Obstacle Overdrive',kind:'MIXED REALITY / GAME DEVELOPMENT',video:'obstacle-overdrive-preview.mp4',image:'obstacle-overdrive-poster.jpg',summary:'A mixed reality racing game built in Unity, bringing a playful racing experience beyond a traditional screen.',details:['Built with Unity and C#, with a kart controller, racing UI, and lap-counting logic.','The repository includes track selection, track saving and loading, and obstacle behaviours.','An experiment in spatial interaction and translating game ideas into a mixed reality experience.'],tech:'Unity · C# · Mixed reality · XR Interaction Toolkit',links:[['View on GitHub','https://github.com/mkbirb/obstacleoverdrive'],['Download concept video','assets/obstacle-overdrive-preview.mp4']],caption:'Generated concept animation, not gameplay footage. The illustration presents the racing idea; it does not reproduce the game’s exact visuals or demonstrate headset behaviour.'},
+ racing:{title:'Obstacle Overdrive',kind:'MIXED REALITY / GAME DEVELOPMENT',image:'obstacle-overdrive-art.svg',artwork:true,summary:'A mixed reality racing game built in Unity, bringing a playful racing experience beyond a traditional screen.',details:['Built with Unity and C#, with a kart controller, racing UI, and lap-counting logic.','The repository includes track selection, track saving and loading, and obstacle behaviours.','An experiment in spatial interaction and translating game ideas into a mixed reality experience.'],tech:'Unity · C# · Mixed reality · XR Interaction Toolkit',links:[['View on GitHub','https://github.com/mkbirb/obstacleoverdrive']],caption:'Original project artwork inspired by the racing game.'},
  vows:{title:'The House of Vows',kind:'CLIENT WEBSITE / FULL-STACK DEVELOPMENT',image:'vows.jpg',summary:'A responsive website for a wedding planning and styling business, delivered from client brief to launch.',details:['Developed with Next.js, React, and TypeScript, translating client feedback into responsive pages and clear enquiry pathways.','Implemented metadata, structured data, and an XML sitemap.','Deployed and maintained on Netlify as part of contract work with 1Oak Marketing and Agency Company.'],tech:'Next.js · React · TypeScript · Responsive design · SEO · Netlify',links:[['Visit live site','https://thehouseofvows.netlify.app'],['View on GitHub','https://github.com/nat-0401/house-of-vow-website']],caption:'Actual screenshot from the deployed client website.'},
  eventhub:{title:'EventHub',kind:'FULL-STACK WEB / UNIVERSITY TEAM PROJECT',summary:'A campus event management platform that helps students discover events and organisers manage them.',details:['A team project at RMIT, built with Next.js and a Spring Boot backend.','Includes event discovery, RSVP flows, event galleries, authentication, and administration features.','Worked as part of a five-person team using shared project planning, reviews, and a Docker-based development setup.'],tech:'Next.js · React · Java · Spring Boot · Docker',links:[['View team repository','https://github.com/cosc2299-2025/team-project-group-p07-04'],['View portfolio repository','https://github.com/nat-0401/eventhub-fullstack-platform']],caption:'The project card uses an original graphic illustration rather than an application screenshot.'},
- chainguard:{title:'ChainGuard',kind:'AI & BLOCKCHAIN / FINAL-YEAR TEAM PROJECT',image:'chainguard-home.png',summary:'An AI investigation assistant that helps users ask blockchain questions and understand the evidence behind an Ethereum address.',details:['Implemented chat and CLI workflows with OpenAI, Gemini, and Claude provider options.','Normalised contract, transaction, token, and liquidity evidence into validated structures with source provenance.','Integrated an external detector through a typed HTTP API, with frontend, backend, and detector services separated in Docker Compose. Missing evidence remains explicit; findings are not guarantees of safety.'],tech:'React · Python · FastAPI · Pydantic · LiteLLM · Blockchain APIs · Docker Compose',links:[['View on GitHub','https://github.com/print-livelongflame/ChainGuard']],caption:'ChainGuard homepage screenshot supplied by Nathaniel.'}
+ chainguard:{title:'ChainGuard',kind:'AI & BLOCKCHAIN / FINAL-YEAR TEAM PROJECT',image:'chainguard-home-clean.png',summary:'An AI investigation assistant that helps users ask blockchain questions and understand the evidence behind an Ethereum address.',details:['Implemented chat and CLI workflows with OpenAI, Gemini, and Claude provider options.','Normalised contract, transaction, token, and liquidity evidence into validated structures with source provenance.','Integrated an external detector through a typed HTTP API, with frontend, backend, and detector services separated in Docker Compose. Missing evidence remains explicit; findings are not guarantees of safety.'],tech:'React · Python · FastAPI · Pydantic · LiteLLM · Blockchain APIs · Docker Compose',links:[['View on GitHub','https://github.com/print-livelongflame/ChainGuard']],caption:'Homepage screenshot supplied by Nathaniel, with the session warning removed.'}
 };
+projects.vision={title:'Staff Detection & Tracking',kind:'COMPUTER VISION / PERSON TRACKING',image:'staff-tracking.svg',artwork:true,summary:'A computer vision pipeline for detecting and tracking people in overhead video, with badge matching to identify staff.',details:['Uses YOLO11 for person detection and ByteTrack to follow people across frames.','Matches staff badges against supplied reference images.','Exports annotated video, frame-level CSV results, a presence timeline, and position trajectories.'],tech:'Python · OpenCV · YOLO11 · ByteTrack',links:[['View on GitHub','https://github.com/nathanielkong/Footfallcam-staff-detection']],caption:'Animated project illustration of a person being tracked.'};
 projects.matchlens.gallery=[
  {label:'Homepage',image:'matchlens-home.jpg',caption:'Actual MatchLens homepage captured from the local project.'},
  {label:'Match room',image:'matchlens.jpg',caption:'Actual interface captured from the project’s local sample preview. Match data shown is synthetic.'}
 ];
 projects.chainguard.gallery=[
- {label:'Homepage',image:'chainguard-home.png',portrait:true,caption:'ChainGuard homepage screenshot supplied by Nathaniel. Open the full image to see it at its original size.'},
+ {label:'Homepage',image:'chainguard-home-clean.png',clean:true,caption:'Homepage screenshot supplied by Nathaniel, with the session warning removed.'},
  {label:'Investigation demo',image:'chainguard.jpg',caption:'Actual frame from the project’s recorded interface demo.'}
 ];
+const ticker=document.querySelector('.ticker');
+const tickerTrack=ticker.querySelector('.ticker-track');
+const tickerPhrase='<span>IDEAS INTO REALITY</span><b>✳</b><span>CODE WITH CURIOSITY</span><b>✳</b><span>BUILD. LEARN. REPEAT.</span><b>✳</b>';
+let tickerWidth=0;
+function buildTicker(force=false){
+ const width=ticker.clientWidth;if(width===tickerWidth&&!force)return;tickerWidth=width;
+ const group=document.createElement('div');group.className='ticker-group';group.innerHTML=tickerPhrase;tickerTrack.replaceChildren(group);
+ for(let count=0;group.getBoundingClientRect().width<width+120&&count<12;count++)group.insertAdjacentHTML('beforeend',tickerPhrase);
+ const distance=group.getBoundingClientRect().width;tickerTrack.append(group.cloneNode(true));tickerTrack.style.setProperty('--ticker-duration',(distance/45)+'s');
+}
+buildTicker();
+if('ResizeObserver' in window)new ResizeObserver(()=>buildTicker()).observe(ticker);else addEventListener('resize',()=>buildTicker());
+document.fonts?.ready.then(()=>buildTicker(true));
 const reducedMotion=window.matchMedia('(prefers-reduced-motion: reduce)');
 const revealTweens=new Map();
 function refreshMotion(){window.ScrollTrigger?.refresh()}
@@ -36,7 +50,7 @@ if(window.gsap&&window.ScrollTrigger){
  gsap.registerPlugin(ScrollTrigger);
  const media=gsap.matchMedia();
  media.add('(prefers-reduced-motion: no-preference)',()=>{
-  gsap.from('.hero-copy>h1,.hero-copy>p,.hero-copy>.button',{y:22,opacity:0,stagger:.1,duration:.8,ease:'power3.out',clearProps:'opacity,visibility,transform'});
+  gsap.from('.hero-copy>h1,.hero-copy>p,.hero-actions>.button',{y:22,opacity:0,stagger:.1,duration:.8,ease:'power3.out',clearProps:'opacity,visibility,transform'});
   document.querySelectorAll('.reveal').forEach((el,index)=>{
    if(el.dataset.motionRevealed==='true')return;
    if(el.matches('.about-intro,.section-heading,.contact-title,.about-copy,.about-notes,.skills,.contact-bottom,.cert-section'))return;
@@ -65,8 +79,6 @@ if(window.gsap&&window.ScrollTrigger){
   gsap.fromTo('.skills',{'--rule-scale':0},{'--rule-scale':1,ease:'none',scrollTrigger:{trigger:'.skills',start:'top 90%',end:'top 60%',scrub:.6}});
   gsap.fromTo('.human-word',{color:'#8e9d7d'},{color:'#d5ef91',ease:'none',scrollTrigger:{trigger:'.about-intro',start:'top 90%',end:'top 40%',scrub:.7}});
   gsap.fromTo('.about-spark',{rotation:-25},{rotation:60,ease:'none',scrollTrigger:{trigger:'.about',start:'top bottom',end:'bottom top',scrub:1}});
-  gsap.fromTo('.ticker',{clipPath:'inset(0% 4% 0% 4%)'},{clipPath:'inset(0% 0% 0% 0%)',ease:'none',clearProps:'clipPath',scrollTrigger:{trigger:'.ticker',start:'top 95%',end:'top 65%',scrub:.7}});
-  gsap.to('.ticker b',{rotation:180,ease:'none',scrollTrigger:{trigger:'.ticker',start:'top bottom',end:'bottom top',scrub:.6}});
   gsap.from('.cert-section>div:not(.cert-symbol),.cert-badge',{y:18,opacity:0,stagger:.1,duration:.7,ease:'power2.out',clearProps:'opacity,transform',scrollTrigger:{trigger:'.cert-section',start:'top 88%',once:true}});
   gsap.to('.cert-symbol',{rotation:100,ease:'none',scrollTrigger:{trigger:'.cert-section',start:'top bottom',end:'bottom top',scrub:.8}});
   gsap.from('.contact-title>b',{y:35,opacity:0,duration:.8,ease:'power3.out',clearProps:'opacity,transform',scrollTrigger:{trigger:'.contact-title',start:'top 83%',once:true}});
@@ -105,7 +117,7 @@ const dialog=document.querySelector('.project-dialog');let lastTrigger;
 document.querySelectorAll('[data-project]').forEach(button=>button.addEventListener('click',()=>{
  const p=projects[button.dataset.project];lastTrigger=button;
  document.getElementById('dialog-title').textContent=p.title;document.getElementById('dialog-kind').textContent=p.kind;document.getElementById('dialog-summary').textContent=p.summary;
- const media=document.querySelector('.dialog-media');media.replaceChildren();media.classList.remove('portrait-preview');
+ const media=document.querySelector('.dialog-media');media.replaceChildren();media.classList.remove('portrait-preview','artwork-media','clean-home');if(p.artwork)media.classList.add('artwork-media');
  if(p.video){const video=document.createElement('video');video.controls=true;video.playsInline=true;video.loop=true;video.muted=true;video.poster='assets/'+p.image;video.src='assets/'+p.video;media.append(video);if(!reducedMotion.matches)video.autoplay=true}
  else if(p.image){const img=document.createElement('img');img.src='assets/'+p.image;img.alt=p.title+' project preview';media.append(img)}
  else{const art=document.createElement('div');art.className='event-dialog-art';art.textContent='eventhub ✳';media.append(art)}
@@ -115,7 +127,7 @@ document.querySelectorAll('[data-project]').forEach(button=>button.addEventListe
  if(p.gallery){
   const fullImage=document.querySelector('.full-preview-link');
   const showPreview=(item,index)=>{
-   const img=document.createElement('img');img.src='assets/'+item.image;img.alt=p.title+' — '+item.label;media.replaceChildren(img);media.classList.toggle('portrait-preview',!!item.portrait);fullImage.href=img.src;fullImage.setAttribute('aria-label','View '+p.title+' '+item.label+' full image');caption.textContent=item.caption;
+   const img=document.createElement('img');img.src='assets/'+item.image;img.alt=p.title+' — '+item.label;media.replaceChildren(img);media.classList.toggle('portrait-preview',!!item.portrait);media.classList.toggle('clean-home',!!item.clean);fullImage.href=img.src;fullImage.setAttribute('aria-label','View '+p.title+' '+item.label+' full image');caption.textContent=item.caption;
    previewOptions.querySelectorAll('button').forEach((b,i)=>b.setAttribute('aria-pressed',String(i===index)));
   };
   p.gallery.forEach((item,index)=>{const option=document.createElement('button');option.type='button';option.textContent=item.label;option.setAttribute('aria-pressed',String(index===0));option.addEventListener('click',()=>showPreview(item,index));previewOptions.append(option)});
@@ -128,6 +140,4 @@ function closeDialog(){dialog.close()}
 document.querySelector('.dialog-close').addEventListener('click',closeDialog);
 dialog.addEventListener('click',e=>{if(e.target===dialog){const r=dialog.getBoundingClientRect();if(e.clientX<r.left||e.clientX>r.right||e.clientY<r.top||e.clientY>r.bottom)closeDialog()}});
 dialog.addEventListener('close',()=>{dialog.querySelector('video')?.pause();document.body.classList.remove('modal-open');lastTrigger?.focus({preventScroll:true})});
-const racingCard=document.querySelector('.racing');const racingVideo=racingCard.querySelector('video');
-racingCard.addEventListener('pointerenter',()=>{if(!reducedMotion.matches)racingVideo.play().catch(()=>{})});racingCard.addEventListener('pointerleave',()=>racingVideo.pause());
 document.querySelector('.copy-email').addEventListener('click',async()=>{const status=document.querySelector('.copy-status');try{if(!navigator.clipboard)throw new Error('unavailable');await navigator.clipboard.writeText('nathanielkong1@gmail.com');status.textContent='Email copied. Say hello!'}catch{status.textContent='nathanielkong1@gmail.com — select the address above to copy, or open your email app.'}});

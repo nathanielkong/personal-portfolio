@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1440" height="810" viewBox="0 0 800 450" role="img" aria-labelledby="title desc">
+  <title id="title">A person tracked through an illustrated space</title><desc id="desc">An animated cartoon character walks across a cream floor while a lime tracking box follows them.</desc>
+  <defs><pattern id="grid" width="50" height="38" patternUnits="userSpaceOnUse"><path d="M50 0H0V38" fill="none" stroke="#d2d7c7" stroke-width="1"/></pattern><clipPath id="scan-clip"><rect x="326" y="96" width="148" height="267" rx="8"/></clipPath></defs>
+  <style>
+    .subject{animation:route 9s ease-in-out infinite alternate}.person{animation:bob .85s ease-in-out infinite alternate;transform-origin:400px 280px}.arm-left{transform-origin:376px 188px;animation:swing .85s ease-in-out infinite alternate}.arm-right{transform-origin:424px 188px;animation:swing .85s ease-in-out infinite alternate-reverse}.leg-left{transform-origin:389px 265px;animation:step .85s ease-in-out infinite alternate}.leg-right{transform-origin:411px 265px;animation:step .85s ease-in-out infinite alternate-reverse}.scan-line{animation:scan 3s linear infinite}.live{animation:pulse 2s ease-in-out infinite}.footprint{animation:footprint 3s linear infinite}
+    @keyframes route{from{transform:translateX(-125px)}to{transform:translateX(125px)}}@keyframes bob{from{transform:translateY(0)}to{transform:translateY(-4px)}}@keyframes swing{from{transform:rotate(-15deg)}to{transform:rotate(15deg)}}@keyframes step{from{transform:rotate(-12deg)}to{transform:rotate(12deg)}}@keyframes scan{0%{transform:translateY(0);opacity:0}15%{opacity:.65}85%{opacity:.65}100%{transform:translateY(245px);opacity:0}}@keyframes pulse{50%{opacity:.3}}@keyframes footprint{0%,100%{opacity:.12}50%{opacity:.7}}
+    @media(prefers-reduced-motion:reduce){*{animation:none!important}.subject{transform:translateX(0)}.scan-line{opacity:0}}
+  </style>
+  <rect width="800" height="450" fill="#e8ebdf"/>
+  <path d="M0 260L800 210V450H0Z" fill="#e0e5d6"/><path d="M0 260L800 210V450H0Z" fill="url(#grid)"/>
+  <text x="37" y="43" font-family="Arial,sans-serif" font-size="11" letter-spacing="2" fill="#65745c">COMPUTER VISION / PERSON TRACKING</text>
+  <rect x="37" y="67" width="141" height="33" rx="16" fill="#f6f5ed"/><circle class="live" cx="56" cy="84" r="4" fill="#7a984f"/><text x="70" y="88" font-family="Arial,sans-serif" font-size="10" letter-spacing="1" fill="#3e4d38">TRACK 01 · ACTIVE</text>
+  <g transform="translate(658 57)"><path d="M-30 14L35 47L-20 130L-94 75Z" fill="#d5ef91" opacity=".3"/><rect x="-37" y="-6" width="61" height="39" rx="12" fill="#394633" transform="rotate(15)"/><circle cx="-2" cy="17" r="12" fill="#e4ecce"/><circle cx="-2" cy="17" r="7" fill="#78944f"/><circle cx="-4" cy="14" r="2" fill="#f6f5ed"/><path d="M17 34L25 49H-10" fill="none" stroke="#7d8971" stroke-width="5" stroke-linecap="round"/></g>
+  <path d="M165 359C257 350 375 369 635 350" fill="none" stroke="#a9bb85" stroke-width="2" stroke-dasharray="4 9"/>
+  <g fill="#b3c98b"><ellipse class="footprint" cx="198" cy="359" rx="5" ry="2.5"/><ellipse class="footprint" cx="245" cy="355" rx="5" ry="2.5" style="animation-delay:-.5s"/><ellipse class="footprint" cx="293" cy="357" rx="5" ry="2.5" style="animation-delay:-1s"/></g>
+  <g class="subject">
+    <ellipse cx="400" cy="355" rx="62" ry="12" fill="#a9b799" opacity=".26"/>
+    <g class="person">
+      <g class="leg-left"><path d="M389 258L382 330" stroke="#3c4938" stroke-width="20" stroke-linecap="round"/><path d="M381 330L366 342H390" fill="#f5f3e9" stroke="#3c4938" stroke-width="4" stroke-linejoin="round"/></g>
+      <g class="leg-right"><path d="M411 258L420 330" stroke="#3c4938" stroke-width="20" stroke-linecap="round"/><path d="M420 330L437 342H411" fill="#f5f3e9" stroke="#3c4938" stroke-width="4" stroke-linejoin="round"/></g>
+      <g class="arm-left"><path d="M378 190L354 232L363 258" fill="none" stroke="#9f94bd" stroke-width="18" stroke-linecap="round" stroke-linejoin="round"/><circle cx="363" cy="260" r="9" fill="#d7ad8c"/></g>
+      <g class="arm-right"><path d="M422 190L445 232L439 258" fill="none" stroke="#b9afd1" stroke-width="18" stroke-linecap="round" stroke-linejoin="round"/><circle cx="439" cy="260" r="9" fill="#d7ad8c"/></g>
+      <path d="M377 178Q400 166 423 178L429 264Q400 275 371 264Z" fill="#b9afd1"/><path d="M393 169H407V184Q400 191 393 184Z" fill="#d7ad8c"/>
+      <ellipse cx="400" cy="145" rx="24" ry="28" fill="#dfb695"/><path d="M376 146Q365 118 389 113Q414 104 427 130L422 151L416 132Q402 139 382 129L381 147Z" fill="#3b4535"/><circle cx="392" cy="148" r="2" fill="#3b4535"/><circle cx="410" cy="148" r="2" fill="#3b4535"/><path d="M394 161Q400 166 407 160" fill="none" stroke="#a87458" stroke-width="2" stroke-linecap="round"/>
+      <path d="M400 187L393 207" stroke="#6b765e" stroke-width="2"/><rect x="384" y="205" width="25" height="29" rx="4" fill="#e3efbd" transform="rotate(6 396 219)"/><circle cx="395" cy="215" r="4" fill="#8b9f68"/><path d="M389 225H402" stroke="#8b9f68" stroke-width="2"/>
+    </g>
+    <rect x="326" y="96" width="148" height="267" rx="8" fill="#d5ef91" opacity=".04" stroke="#8ba65c" stroke-width="1"/>
+    <g fill="none" stroke="#6f9145" stroke-width="4" stroke-linecap="round"><path d="M326 123V96H353M447 96H474V123M474 336V363H447M353 363H326V336"/></g>
+    <g clip-path="url(#scan-clip)"><rect class="scan-line" x="326" y="100" width="148" height="3" fill="#a4c867"/></g>
+    <rect x="326" y="69" width="91" height="22" rx="5" fill="#3c4938"/><text x="336" y="84" fill="#e4f2c2" font-family="Arial,sans-serif" font-size="9" letter-spacing="1">PERSON 01</text>
+    <circle cx="400" cy="230" r="3" fill="#6f9145"/><path d="M392 230H408M400 222V238" stroke="#6f9145" stroke-width="1"/>
+  </g>
+  <g fill="none" stroke="#bec9af" stroke-width="2"><path d="M24 140V120H44M756 120H776V140M776 393V413H756M44 413H24V393"/></g>
+  <text x="39" y="418" font-family="Arial,sans-serif" font-size="10" letter-spacing="1.5" fill="#78866b">DETECT</text><path d="M100 414H131" stroke="#99ad78"/><text x="148" y="418" font-family="Arial,sans-serif" font-size="10" letter-spacing="1.5" fill="#78866b">TRACK</text><path d="M204 414H235" stroke="#99ad78"/><text x="252" y="418" font-family="Arial,sans-serif" font-size="10" letter-spacing="1.5" fill="#78866b">UNDERSTAND</text>
+</svg>
