@@ -9,9 +9,11 @@
   <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;450;500;550;600;650;700&family=Manrope:wght@400;500;600;650;700;750;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="badge.css">
   <script src="assets/vendor/gsap.min.js" defer></script>
   <script src="assets/vendor/ScrollTrigger.min.js" defer></script>
   <script src="app.js" defer></script>
+  <script src="badge.js" defer></script>
 </head>
 <body>
   <a class="skip" href="#main">Skip to content</a><div class="scroll-progress" aria-hidden="true"></div>
@@ -20,7 +22,35 @@
     <section class="hero wrap" id="home">
       <div class="hero-top"><p class="eyebrow"><span class="status-dot"></span> NATHANIEL KONG / MELBOURNE</p><p class="hero-index">PORTFOLIO — 2026</p></div>
       <div class="hero-grid"><div class="hero-copy"><h1>Curious mind.<br>Builder at <span class="heart-word">heart<svg viewBox="0 0 300 24" aria-hidden="true"><path d="M4 16 Q140 -3 295 11 M45 22 Q170 5 270 17"/></svg></span>.</h1><p>I’m Nathaniel, a software developer based in Melbourne. I build web applications, AI tools, and interactive experiences.</p><div class="hero-actions"><a class="button dark" href="#projects">Explore my work <span>↘</span></a><a class="button resume-button" href="assets/nathaniel-kong-resume.pdf" target="_blank" rel="noopener">View my résumé <span>↗</span></a></div></div>
-      <div class="hero-art" aria-label="A playful orbit of code, AI, and ideas"><div class="art-orbit orbit-one"></div><div class="art-orbit orbit-two"></div><div class="art-grid"></div><div class="sphere"><span>n<span class="sphere-k">k</span><small>✳</small></span></div><div class="floating-tile tile-code" aria-hidden="true">&lt;/&gt;</div><div class="floating-tile tile-ai" aria-hidden="true">ai<span>✳</span></div><div class="floating-tile tile-ball" aria-hidden="true">⚽</div><div class="art-caption">ALWAYS CURIOUS. ALWAYS BUILDING.<svg viewBox="0 0 80 50" aria-hidden="true"><path d="M4 8 Q 70 -8 68 38 M52 28 L68 40 L79 24"/></svg></div><span class="tiny-spark spark-one">✳</span><span class="tiny-spark spark-two">+</span></div></div>
+      <div class="badge-stage" aria-label="Interactive hanging name badge">
+        <svg class="badge-rope" viewBox="0 0 600 520" aria-hidden="true">
+          <path class="rope-path rope-shadow" d="M318 9 Q335 70 318 125"/>
+          <path id="badge-strap-path" class="rope-path rope-band" d="M318 9 Q335 70 318 125"/>
+          <path class="rope-path rope-edge" d="M318 9 Q335 70 318 125"/>
+          <text dy="2"><textPath href="#badge-strap-path" startOffset="12">NK · NATHANIEL KONG · NK</textPath></text>
+          <circle class="badge-anchor" cx="318" cy="9" r="4"/>
+        </svg>
+        <span class="badge-ground" aria-hidden="true"></span>
+        <button class="hanging-badge" type="button" aria-label="Nathaniel Kong name badge. Drag to move, or click to flip." aria-describedby="badge-help badge-keyboard-help" aria-pressed="false">
+          <span class="badge-hardware" aria-hidden="true"></span>
+          <span class="badge-flipper" aria-hidden="true">
+            <span class="badge-face badge-front">
+              <span class="badge-slot"></span>
+              <span class="badge-topline"><span class="badge-monogram">nk<i>✳</i></span><span class="badge-pass">PORTFOLIO PASS<br>2026</span></span>
+              <span class="badge-photo"><img src="assets/nathaniel-portrait.jpg" alt="" width="1240" height="1653" draggable="false" fetchpriority="high"></span>
+              <span class="badge-identity"><span class="badge-name">Nathaniel Kong</span><span class="badge-role">SOFTWARE DEVELOPER</span></span>
+              <span class="badge-bottomline"><span>MELBOURNE, AUSTRALIA</span><span class="badge-star">✳</span></span>
+            </span>
+            <span class="badge-face badge-back">
+              <span class="badge-slot"></span>
+              <span><span class="badge-back-mark">nk<i>✳</i></span><span class="badge-back-name">Nathaniel Kong</span><span class="badge-back-role">DEVELOPER / MELBOURNE</span></span>
+              <span><span class="badge-back-tools">FULL-STACK DEVELOPMENT<br>AI &amp; INTERACTIVE TECH</span><span class="badge-back-contact">nathanielkong1@gmail.com</span><span class="badge-back-foot">PERSONAL PORTFOLIO · 2026</span></span>
+            </span>
+          </span>
+        </button>
+        <p class="badge-hint" id="badge-help">DRAG TO MOVE <span>·</span> CLICK TO FLIP</p>
+        <span class="sr-only" id="badge-keyboard-help">You can also use the arrow keys to swing the badge, Enter or Space to flip it, and Escape to reset it.</span>
+      </div></div>
       <div class="hero-bottom"><div class="hero-tags"><span>Full-stack development</span><span>AI & machine learning</span><span>Creative experiments</span></div></div>
     </section>
     <div class="ticker" aria-hidden="true"><div class="ticker-window"><div class="ticker-track"><div class="ticker-group"><span>IDEAS INTO REALITY</span><b>✳</b><span>CODE WITH CURIOSITY</span><b>✳</b><span>BUILD. LEARN. REPEAT.</span><b>✳</b><span>IDEAS INTO REALITY</span><b>✳</b><span>CODE WITH CURIOSITY</span><b>✳</b><span>BUILD. LEARN. REPEAT.</span><b>✳</b><span>IDEAS INTO REALITY</span><b>✳</b><span>CODE WITH CURIOSITY</span><b>✳</b><span>BUILD. LEARN. REPEAT.</span><b>✳</b></div><div class="ticker-group"><span>IDEAS INTO REALITY</span><b>✳</b><span>CODE WITH CURIOSITY</span><b>✳</b><span>BUILD. LEARN. REPEAT.</span><b>✳</b><span>IDEAS INTO REALITY</span><b>✳</b><span>CODE WITH CURIOSITY</span><b>✳</b><span>BUILD. LEARN. REPEAT.</span><b>✳</b><span>IDEAS INTO REALITY</span><b>✳</b><span>CODE WITH CURIOSITY</span><b>✳</b><span>BUILD. LEARN. REPEAT.</span><b>✳</b></div></div></div></div>

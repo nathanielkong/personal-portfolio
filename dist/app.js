@@ -89,8 +89,6 @@ if(window.gsap&&window.ScrollTrigger){
   return()=>revealTweens.clear();
  });
  media.add('(min-width: 761px) and (prefers-reduced-motion: no-preference)',()=>{
-  gsap.to('.hero-art',{y:-72,ease:'none',scrollTrigger:{trigger:'.hero',start:'top top',end:'bottom top',scrub:1}});
-  gsap.to('.floating-tile',{y:-28,ease:'none',scrollTrigger:{trigger:'.hero',start:'top top',end:'bottom top',scrub:1}});
   gsap.to('.about-notes',{y:-24,ease:'none',scrollTrigger:{trigger:'.about',start:'top 75%',end:'bottom 30%',scrub:1}});
  });
  document.fonts?.ready.then(refreshMotion);
