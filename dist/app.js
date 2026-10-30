@@ -30,7 +30,21 @@ if('ResizeObserver' in window)new ResizeObserver(()=>buildTicker()).observe(tick
 document.fonts?.ready.then(()=>buildTicker(true));
 const reducedMotion=window.matchMedia('(prefers-reduced-motion: reduce)');
 const revealTweens=new Map();
-function refreshMotion(){window.ScrollTrigger?.refresh()}
+// Wait for scrolling to finish before recalculating animation positions.
+function refreshMotion(){window.ScrollTrigger?.refresh(true)}
+
+// Keep smooth scrolling local to a link click. Global CSS smooth scrolling also
+// animates ScrollTrigger's temporary scroll resets while the page is loading.
+document.addEventListener('click',event=>{
+ if(event.defaultPrevented||event.button!==0||event.metaKey||event.ctrlKey||event.shiftKey||event.altKey)return;
+ const link=event.target.closest('a[href^="#"]');
+ if(!link||link.matches('.skip')||link.hasAttribute('download')||link.target==='_blank')return;
+ const hash=link.getAttribute('href');
+ const target=document.getElementById(hash.slice(1));if(!target)return;
+ event.preventDefault();
+ if(location.hash!==hash)history.pushState(null,'',hash);
+ target.scrollIntoView({behavior:reducedMotion.matches?'instant':'smooth',block:'start'});
+});
 function revealFilteredProjects(){
  if(!window.gsap||reducedMotion.matches)return;
  const cards=[...document.querySelectorAll('.project')];
@@ -48,6 +62,7 @@ reducedMotion.addEventListener('change',event=>{
 if(window.gsap&&window.ScrollTrigger){
  const {gsap,ScrollTrigger}=window;
  gsap.registerPlugin(ScrollTrigger);
+ ScrollTrigger.config({ignoreMobileResize:true});
  const media=gsap.matchMedia();
  media.add('(prefers-reduced-motion: no-preference)',()=>{
   gsap.from('.hero-copy>h1,.hero-copy>p,.hero-actions>.button',{y:22,opacity:0,stagger:.1,duration:.8,ease:'power3.out',clearProps:'opacity,visibility,transform'});
@@ -92,8 +107,8 @@ if(window.gsap&&window.ScrollTrigger){
   gsap.to('.about-notes',{y:-24,ease:'none',scrollTrigger:{trigger:'.about',start:'top 75%',end:'bottom 30%',scrub:1}});
  });
  document.fonts?.ready.then(refreshMotion);
- addEventListener('load',refreshMotion,{once:true});
- document.querySelectorAll('.project-window img').forEach(img=>{if(!img.complete)img.addEventListener('load',refreshMotion,{once:true})});
+ // Project frames reserve their size in CSS, so images do not change trigger
+ // positions. Refreshing on each lazy image load needlessly resets scrolling.
 }
 if('IntersectionObserver' in window){
  const sectionObserver=new IntersectionObserver(entries=>{
